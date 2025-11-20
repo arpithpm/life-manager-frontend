@@ -70,6 +70,72 @@
   letter-spacing: 0.5px;
 }
 
+/* Search and Sort Controls */
+.search-sort-container {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.search-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #2d3748;
+  transition: all 0.2s;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.sort-select {
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #2d3748;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  min-width: 180px;
+}
+
+.sort-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Advanced Filters */
+.advanced-filters {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-select {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 0.875rem;
+  color: #2d3748;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.filter-select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
 /* Filters */
 .todo-filters {
   display: flex;
@@ -168,11 +234,26 @@
   flex: 1;
 }
 
+.todo-details .todo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.todo-badges {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
 .todo-title {
   font-size: 1.125rem;
   font-weight: 600;
   color: #2d3748;
-  margin: 0 0 0.5rem 0;
+  margin: 0;
+  flex: 1;
 }
 
 .todo-item.completed .todo-title {
@@ -359,8 +440,34 @@ form {
   padding: 1.5rem;
 }
 
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
 .form-group {
   margin-bottom: 1.5rem;
+}
+
+.form-group select {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  color: #2d3748;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-family: inherit;
+}
+
+.form-group select:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
 }
 
 .form-group label {
@@ -474,6 +581,18 @@ form {
     grid-template-columns: 1fr;
   }
 
+  .search-sort-container {
+    flex-direction: column;
+  }
+
+  .advanced-filters {
+    flex-direction: column;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
   .todo-item {
     flex-direction: column;
     gap: 1rem;
@@ -486,5 +605,10 @@ form {
 
   .modal-content {
     margin: 1rem;
+  }
+
+  .todo-details .todo-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 }

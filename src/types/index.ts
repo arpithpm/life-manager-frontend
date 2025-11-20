@@ -54,3 +54,43 @@ export interface CalendarEvent {
   allDay: boolean;
   color?: string;
 }
+
+export type Priority = "LOW" | "MEDIUM" | "HIGH";
+export type Category =
+  | "WORK"
+  | "PERSONAL"
+  | "SHOPPING"
+  | "HEALTH"
+  | "FINANCE"
+  | "EDUCATION"
+  | "OTHER";
+
+export interface Todo {
+  id: string;
+  userId: string;
+  title: string;
+  description?: string;
+  completed: boolean;
+  dueDate?: string;
+  createdAt: string;
+  updatedAt: string;
+  priority: Priority;
+  category: Category;
+}
+
+export interface CreateTodoRequest {
+  title: string;
+  description?: string;
+  dueDate?: string;
+  priority?: Priority;
+  category?: Category;
+}
+
+export interface UpdateTodoRequest {
+  title?: string;
+  description?: string;
+  completed?: boolean;
+  dueDate?: string;
+  priority?: Priority;
+  category?: Category;
+}

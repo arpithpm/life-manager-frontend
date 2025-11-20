@@ -63,17 +63,21 @@ const DashboardPage: React.FC = () => {
                   <TaskIcon
                     sx={{ fontSize: 40, color: "primary.main", mr: 2 }}
                   />
-                  <Typography variant="h6">Tasks</Typography>
+                  <Typography variant="h6">Todos</Typography>
                 </Box>
                 <Typography
                   variant="body2"
                   color="text.secondary"
                   sx={{ mb: 2 }}
                 >
-                  Organize and track your daily tasks
+                  Organize and track your daily todos
                 </Typography>
-                <Button variant="outlined" fullWidth disabled>
-                  Coming Soon
+                <Button
+                  variant="contained"
+                  fullWidth
+                  onClick={() => navigate("/todos")}
+                >
+                  Manage Todos
                 </Button>
               </CardContent>
             </Card>
